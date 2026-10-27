@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="The Rock & Roll Tree: a hundred years of rock, from the Delta blues to today, grown out of one gold guitar. No faces. All legends.">
+<title>Faceless Rock &amp; Roll</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Lobster&family=Oswald:wght@500;600&display=swap">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+img{max-width:100%}
+
+/* Layout: a dark stage. Hero = thesis + poster; then the Tree up close, the mission, editions, the merch line, the waitlist. */
+:root {
+  --stage: #0C0811;
+  --panel: #171021;
+  --line: #3A2A1A;
+  --gold: #E2B347;
+  --gold-hi: #F4D98C;
+  --cream: #F2E7CE;
+  --muted: #B3A7C6;
+  --burgundy: #8E1B2C;
+  --display: "Cinzel", "Trajan Pro", Georgia, serif;
+  --script: "Lobster", "Brush Script MT", cursive;
+  --label: "Oswald", "Arial Narrow", Arial, sans-serif;
+  --body: "Crimson Pro", Georgia, "Times New Roman", serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--stage);
+  color: var(--cream);
+  font-family: var(--body);
+  font-size: 19px;
+  line-height: 1.6;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--stage); }
+.wrap {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+a { color: var(--gold-hi); }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--gold-hi); outline-offset: 3px; }
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+p { margin: 0; }
+.label {
+  font-family: var(--label);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* header */
+header.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: color-mix(in srgb, var(--stage) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid color-mix(in srgb, var(--gold) 25%, transparent);
+}
+header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--cream); }
+.brand svg { width: 34px; height: 38px; flex: none; }
+.brand b { font-family: var(--display); font-weight: 700; letter-spacing: 0.14em; font-size: 17px; color: var(--gold-hi); }
+.brand i { font-family: var(--script); font-style: normal; font-size: 19px; color: var(--cream); margin-left: 4px; }
+nav.links { display: flex; gap: 22px; flex-wrap: wrap; }
+nav.links a { font-family: var(--label); font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; color: var(--muted); }
+nav.links a:hover { color: var(--gold-hi); }
+
+/* hero */
+.hero { position: relative; overflow: hidden; }
+.hero::before {
+  content: ""; position: absolute; inset: -20% -10% auto; height: 120%;
+  background:
+    radial-gradient(ellipse 40% 55% at 72% 30%, rgba(142, 99, 201, 0.30), transparent 70%),
+    conic-gradient(from 200deg at 72% -10%, transparent 0deg, rgba(244, 217, 140, 0.10) 8deg, transparent 18deg, transparent 40deg, rgba(244, 217, 140, 0.07) 48deg, transparent 58deg);
+  pointer-events: none;
+}
+.hero .wrap { position: relative; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: 56px; align-items: center; padding-block: 72px 80px; }
+.hero h1 { font-family: var(--display); font-weight: 700; font-size: clamp(44px, 6.4vw, 86px); line-height: 1.02; letter-spacing: 0.02em; color: var(--gold-hi); }
+.hero h1 span { display: block; color: var(--cream); }
+.hero .lede { margin-top: 26px; font-size: 22px; max-width: 34ch; color: var(--cream); }
+.hero .lede em { font-style: italic; color: var(--gold-hi); }
+.cta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 34px; }
+.btn {
+  font-family: var(--label); font-weight: 600; font-size: 15px; letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 15px 24px; border-radius: 3px; text-decoration: none; border: 1.5px solid var(--gold); cursor: pointer;
+  min-height: 48px; display: inline-flex; align-items: center;
+}
+.btn.solid { background: var(--gold); color: #1A1008; }
+.btn.solid:hover { background: var(--gold-hi); }
+.btn.ghost { background: transparent; color: var(--gold-hi); }
+.btn.ghost:hover { background: color-mix(in srgb, var(--gold) 14%, transparent); }
+.poster-frame {
+  justify-self: center; width: min(100%, 440px);
+  padding: 18px; background: #050307;
+  border: 1px solid #2A2030;
+  box-shadow: 0 2px 0 #3A2C44 inset, 0 40px 80px rgba(0,0,0,0.65), 0 0 0 10px #0F0A14, 0 0 0 11px color-mix(in srgb, var(--gold) 35%, transparent);
+  transform: rotate(1.4deg);
+}
+.poster-frame img { display: block; width: 100%; height: auto; }
+.plate { margin: 14px auto 0; width: 62%; text-align: center; font-family: var(--display); font-size: 11px; letter-spacing: 0.2em; color: #2A1A06; background: linear-gradient(180deg, #F4D98C, #B8862A); padding: 6px 8px; }
+
+/* facts strip */
+.facts { border-block: 1px solid color-mix(in srgb, var(--gold) 22%, transparent); background: var(--panel); }
+.facts .wrap { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; padding-block: 28px; }
+.fact b { display: block; font-family: var(--display); font-size: 40px; color: var(--gold-hi); line-height: 1; font-variant-numeric: tabular-nums; }
+.fact span { font-family: var(--label); font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+
+section.block .wrap { padding-block: 88px; }
+.head { display: grid; gap: 14px; max-width: 760px; margin-bottom: 40px; }
+.head h2 { font-family: var(--display); font-weight: 700; font-size: clamp(32px, 4vw, 50px); line-height: 1.1; color: var(--cream); }
+.head p { color: var(--muted); font-size: 20px; }
+
+/* the tree up close */
+.closeups { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; }
+figure { margin: 0; }
+figure img { display: block; width: 100%; height: auto; border: 1px solid #2A2030; }
+figcaption { margin-top: 12px; color: var(--muted); font-size: 17px; }
+figcaption strong { color: var(--gold-hi); font-weight: 600; }
+.wide { grid-column: 1 / -1; }
+
+/* mission */
+.mission { background: radial-gradient(ellipse 60% 80% at 15% 50%, rgba(142, 27, 44, 0.28), transparent 70%), var(--stage); }
+.mission .wrap { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 56px; align-items: center; }
+.mission .badge { width: min(100%, 320px); border-radius: 50%; justify-self: center; box-shadow: 0 30px 60px rgba(0,0,0,0.6); }
+.mission blockquote { margin: 0; font-family: var(--script); font-size: clamp(34px, 4.4vw, 54px); line-height: 1.15; color: var(--gold-hi); }
+.mission .copy { display: grid; gap: 18px; max-width: 60ch; }
+.mission .note { font-size: 16px; color: var(--muted); font-style: italic; }
+
+/* editions */
+.editions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.ed { background: var(--panel); border: 1px solid #2E2238; padding: 28px 26px 30px; display: grid; gap: 14px; align-content: start; }
+.ed.feature { border-color: color-mix(in srgb, var(--gold) 60%, transparent); }
+.ed h3 { font-family: var(--display); font-size: 24px; color: var(--cream); }
+.ed .tag { justify-self: start; font-family: var(--label); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; padding: 5px 10px; border: 1px solid var(--gold); color: var(--gold-hi); }
+.ed ul { margin: 0; padding-left: 18px; color: var(--cream); display: grid; gap: 6px; font-size: 18px; }
+.ed .price { font-family: var(--label); font-size: 15px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); border-top: 1px solid #2E2238; padding-top: 14px; }
+
+/* merch */
+.merch { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.item { border: 1px dashed color-mix(in srgb, var(--gold) 35%, transparent); padding: 22px; display: grid; gap: 10px; align-content: start; }
+.item svg { width: 54px; height: 54px; }
+.item h3 { font-family: var(--label); font-weight: 600; font-size: 17px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-hi); }
+.item p { color: var(--muted); font-size: 17px; }
+
+/* waitlist */
+.join { background: var(--panel); border-top: 1px solid color-mix(in srgb, var(--gold) 22%, transparent); }
+.join .wrap { display: grid; gap: 22px; justify-items: center; text-align: center; }
+.join h2 { font-family: var(--display); font-size: clamp(30px, 4vw, 46px); color: var(--cream); }
+.join p { color: var(--muted); max-width: 52ch; }
+form.signup { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; width: min(100%, 560px); }
+form.signup label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+form.signup input {
+  flex: 1 1 260px; min-width: 0; min-height: 50px; padding: 0 16px; font-size: 18px; font-family: var(--body);
+  background: var(--stage); color: var(--cream); border: 1.5px solid #4A3A56; border-radius: 3px;
+}
+.thanks { color: var(--gold-hi); font-size: 18px; min-height: 1.6em; }
+
+footer { border-top: 1px solid #241A2C; }
+footer .wrap { padding-block: 34px; display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; color: var(--muted); font-size: 15px; }
+footer b { font-family: var(--display); letter-spacing: 0.14em; color: var(--gold); font-weight: 700; }
+
+@media (max-width: 860px) {
+  .hero .wrap, .mission .wrap { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .hero .wrap { padding-block: 48px 64px; }
+  .editions { grid-template-columns: minmax(0, 1fr); }
+  .merch { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .closeups { grid-template-columns: minmax(0, 1fr); }
+  .facts .wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  nav.links { gap: 16px; }
+}
+@media (max-width: 480px) { .merch { grid-template-columns: minmax(0, 1fr); } body { font-size: 18px; } }
+@media (prefers-reduced-motion: no-preference) {
+  .poster-frame { transition: transform 0.5s ease; }
+  .poster-frame:hover { transform: rotate(0deg) scale(1.01); }
+}
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Faceless Rock and Roll home">
+      <svg viewBox="0 0 40 46" aria-hidden="true"><path d="M20 1C30 1 37 5 36 14C35 24 27 37 20 45C13 37 5 24 4 14C3 5 10 1 20 1Z" fill="#0C0811" stroke="#E2B347" stroke-width="2"/><ellipse cx="20" cy="17" rx="7" ry="8.5" fill="#E2B347"/><ellipse cx="20" cy="18" rx="4.6" ry="6" fill="#0C0811"/><path d="M11 33C11.5 27 15 25 20 25C25 25 28.5 27 29 33Z" fill="#E2B347"/></svg>
+      <span><b>FACELESS</b><i>Rock &amp; Roll</i></span>
+    </a>
+    <nav class="links" aria-label="Sections">
+      <a href="#tree">The Tree</a>
+      <a href="#mission">Mission</a>
+      <a href="#editions">Editions</a>
+      <a href="#join">Join</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="label">The Rock &amp; Roll Tree · Edition One</p>
+        <h1 style="margin-top:18px">No faces.<span>All legends.</span></h1>
+        <p class="lede">A hundred years of rock, from the Delta blues to the bands playing tonight, grown out of one gold guitar. <em>Every name, no faces.</em></p>
+        <div class="cta">
+          <a class="btn solid" href="#join">Join the waitlist</a>
+          <a class="btn ghost" href="#tree">See the Tree</a>
+        </div>
+      </div>
+      <div class="poster-frame">
+        <img src="poster.jpg" alt="The Rock and Roll Tree poster: a gold guitar neck rises from a sunburst guitar body as the trunk, with branches for 24 styles of rock carrying artist cards and engraved names, from the blues roots at the bottom to rock today at the top." width="1000" height="1500">
+        <div class="plate">NO. ___ OF 500</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="facts" aria-label="The poster in numbers">
+    <div class="wrap">
+      <div class="fact"><b>249</b><span>Artists &amp; bands</span></div>
+      <div class="fact"><b>24</b><span>Styles &amp; scenes</span></div>
+      <div class="fact"><b>8</b><span>Roots</span></div>
+      <div class="fact"><b>24×36</b><span>Inches, wall-sized</span></div>
+    </div>
+  </div>
+
+  <section class="block" id="tree">
+    <div class="wrap">
+      <div class="head">
+        <p class="label">The Tree up close</p>
+        <h2>Read it like a family history.</h2>
+        <p>The roots are the music rock grew from. The guitar neck counts the decades. Each branch is a scene, its headliners on cards and the rest of the family engraved into the gold.</p>
+      </div>
+      <div class="closeups">
+        <figure>
+          <img src="detail1.jpg" alt="Close-up of the arena metal and post-punk branches, with artist cards and silhouettes." width="1050" height="560" loading="lazy">
+          <figcaption><strong>Every scene has its own look.</strong> Neon for new wave, blackletter for metal, ransom notes for punk, flannel for grunge.</figcaption>
+        </figure>
+        <figure>
+          <img src="detail2.jpg" alt="Close-up of the roots and the sunburst guitar body at the base of the tree." width="1200" height="388" loading="lazy">
+          <figcaption><strong>It all starts at the roots.</strong> Work songs, spirituals, Delta blues, gospel, country, boogie-woogie, jump blues and R&amp;B.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="block mission" id="mission">
+    <div class="wrap">
+      <img class="badge" src="badge.jpg" alt="The Faceless Rock and Roll badge: a gold silhouette with a blank face and a guitar headstock crown." width="360" height="360" loading="lazy">
+      <div class="copy">
+        <p class="label">Why faceless</p>
+        <blockquote>Rock was never about the faces. It's about the music.</blockquote>
+        <p>We tell the whole story: who came first, who they inspired, and the scenes they started. We leave the faces out. Every artist is here by name and by history, drawn as a silhouette on our own artwork.</p>
+        <p>Our dream is a future edition with the real portraits, licensed properly from the artists and estates. Every poster sold moves us closer to it.</p>
+        <p class="note">Names are used for historical reference only. Faceless Rock &amp; Roll is not affiliated with or endorsed by any artist.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="editions">
+    <div class="wrap">
+      <div class="head">
+        <p class="label">Editions</p>
+        <h2>Pick your pressing.</h2>
+        <p>Printed on heavy archival stock. Pricing is announced to the waitlist first.</p>
+      </div>
+      <div class="editions">
+        <article class="ed">
+          <span class="tag">Open edition</span>
+          <h3>The Tree, 24×36</h3>
+          <ul><li>Full-color archival print</li><li>Rolled and shipped in a tube</li><li>Fits a standard poster frame</li></ul>
+          <p class="price">Price announced at launch</p>
+        </article>
+        <article class="ed feature">
+          <span class="tag">Collector's edition</span>
+          <h3>Numbered &amp; framed</h3>
+          <ul><li>Limited to 500, hand-numbered</li><li>Black shadow-box frame</li><li>Engraved brass nameplate</li></ul>
+          <p class="price">Waitlist gets first pick of numbers</p>
+        </article>
+        <article class="ed">
+          <span class="tag">Coming next</span>
+          <h3>The series</h3>
+          <ul><li>The Punk Tree</li><li>The Metal Tree</li><li>The Blues Tree</li></ul>
+          <p class="price">Tell us which one you want first</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="merch-h">
+    <div class="wrap">
+      <div class="head">
+        <p class="label">The Faceless line</p>
+        <h2 id="merch-h">Wear the brand, not the band.</h2>
+      </div>
+      <div class="merch">
+        <div class="item">
+          <svg viewBox="0 0 54 54" aria-hidden="true"><path d="M17 8L8 14L4 24L12 27L14 23V48H40V23L42 27L50 24L46 14L37 8C35 12 31 14 27 14C23 14 19 12 17 8Z" fill="none" stroke="#E2B347" stroke-width="2"/><ellipse cx="27" cy="28" rx="5" ry="6" fill="none" stroke="#E2B347" stroke-width="1.6"/></svg>
+          <h3>Tees</h3><p>Silhouette players: the guitarist, the drummer, the singer.</p>
+        </div>
+        <div class="item">
+          <svg viewBox="0 0 54 54" aria-hidden="true"><path d="M20 4H34V30C34 34 37 36 41 38C46 40 47 47 42 49C38 51 31 50 26 47L18 42C15 40 14 37 16 34L20 28Z" fill="none" stroke="#E2B347" stroke-width="2"/><path d="M20 10H34M20 16H34M20 22H34" stroke="#E2B347" stroke-width="1.4"/></svg>
+          <h3>Socks</h3><p>A gold fretboard that runs up your ankle.</p>
+        </div>
+        <div class="item">
+          <svg viewBox="0 0 54 54" aria-hidden="true"><path d="M27 4C39 4 46 8 45 17C44 28 35 42 27 50C19 42 10 28 9 17C8 8 15 4 27 4Z" fill="none" stroke="#E2B347" stroke-width="2"/><circle cx="27" cy="20" r="6" fill="none" stroke="#E2B347" stroke-width="1.6"/></svg>
+          <h3>Pins &amp; picks</h3><p>Enamel picks with the Faceless badge.</p>
+        </div>
+        <div class="item">
+          <svg viewBox="0 0 54 54" aria-hidden="true"><path d="M10 18H44L41 50H13Z" fill="none" stroke="#E2B347" stroke-width="2"/><path d="M19 18C19 10 22 6 27 6C32 6 35 10 35 18" fill="none" stroke="#E2B347" stroke-width="2"/></svg>
+          <h3>The Roots tote</h3><p>The eight roots of rock, printed in gold.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block join" id="join">
+    <div class="wrap">
+      <p class="label">Edition One</p>
+      <h2>Get a low number.</h2>
+      <p>Join the waitlist for launch dates, pricing, and first pick of the 500 numbered collector's prints.</p>
+      <form class="signup" id="signup" novalidate>
+        <label for="email">Email address</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+        <button class="btn solid" type="submit">Join the waitlist</button>
+      </form>
+      <p class="thanks" id="thanks" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span><b>FACELESS</b> Rock &amp; Roll · facelessrocknroll.com</span>
+    <span>© 2026 · Not affiliated with or endorsed by any artist.</span>
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById('signup');
+  const email = document.getElementById('email');
+  const thanks = document.getElementById('thanks');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const v = email.value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) {
+      thanks.textContent = 'Enter a full email address, like name@example.com.';
+      email.focus();
+      return;
+    }
+    thanks.textContent = "Thanks! Email hello@facelessrocknroll.com with \"Waitlist\" in the subject and we'll save you a spot.";
+    email.value = '';
+  });
+</script>
+
+</body>
+</html>
